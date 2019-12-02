@@ -1,8 +1,8 @@
 from git import Repo
 import os
 
-gitdir = "iosplist"
-server_host = "http://10.1.5.33:5000"
+gitdir = "iosplist"  # github文件名，在static目录下，建立git仓库，建立相应项目的文件夹
+server_host = "http://10.1.5.33:5000" # 服务器的地址
 
 def check_github():
     # 判断本地文件是否更新，更新则推送更新

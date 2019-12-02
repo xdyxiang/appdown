@@ -5,7 +5,7 @@ from git_action import check_github,diff_pkg_plist,gitdir
 
 # 自己创建git仓库，仓库名iosplist，底下有两个项目的文件夹viawallet，pool
 
-githome = "https://gitee.com/dengyouxinviabtc/{0}".format(gitdir)
+githome = "https://gitee.com/xxx/{0}".format(gitdir)
 
 app = Flask(__name__)
 

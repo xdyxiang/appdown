@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>app下载页</title>
+</head>
+<body>
+<div class="container">
+
+<h3 class="text-center">ViaWallet APP 下载页</h3>
+<br>
+<br>
+<form class="form-horizontal" role="form" action="{{ url_for('ios_viawallet') }}" method=post>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">iOS下载</label>
+        <div class="col-sm-4">
+            <select class="form-control" name="version">
+                {% for iosfile,mod_time in ios_filelist %}
+                    <option>{{ iosfile }}({{ mod_time }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default phonemargin">下载</button>
+        </div>
+    </div>
+</form>
+<br>
+<form class="form-horizontal" role="form" action="{{ url_for('android_viawallet') }}" method=post>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">Android下载</label>
+        <div class="col-sm-4">
+            <select class="form-control" name="version">
+                {% for android,mod_time in android_filelist %}
+                    <option>{{ android }}({{ mod_time }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default phonemargin">下载</button>
+        </div>
+    </div>
+</form>
+
+<br>
+<br>
+<br>
+
+<h3 class="text-center">Pool APP 下载页</h3>
+<br>
+<br>
+<form class="form-horizontal" role="form" action="{{ url_for('ios_pool') }}" method=post>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">iOS下载</label>
+        <div class="col-sm-4">
+            <select class="form-control" name="version">
+                {% for iosfile,mod_time in pool_ios_filelist %}
+                    <option>{{ iosfile }}({{ mod_time }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default phonemargin">下载</button>
+        </div>
+    </div>
+</form>
+<br>
+<form class="form-horizontal" role="form" action="{{ url_for('android_pool') }}" method=post>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">Android下载</label>
+        <div class="col-sm-4">
+            <select class="form-control" name="version">
+                {% for android,mod_time in pool_android_filelist %}
+                    <option>{{ android }}({{ mod_time }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default phonemargin">下载</button>
+        </div>
+    </div>
+</form>
+
+
+</div>
+</body>
+<style>
+    {#@media (min-width:@screen-sm-min) { .phonemargin{margin-top:10px}}#}
+    @media only screen and (max-width:768px){ .phonemargin{margin-top:10px}}
+</style>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="/static/bootstrapsrc/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="/static/bootstrapsrc/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="/static/bootstrapsrc/bootstrap.min.js"></script>
+</html>
